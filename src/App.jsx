@@ -3,6 +3,7 @@ import './App.css'
 import {BrowserRouter ,Routes ,Route, useNavigate} from "react-router-dom"
 import Start from './views/Start'
 import Home from './views/Home'
+import Screen from './views/Screen'
 
 const App = () => {
 
@@ -25,6 +26,7 @@ const App = () => {
        <Routes>
          <Route path='/' element={<Start chechscrn={setFullscrn}/>}/>
          <Route path='/home' element={<Home/>}/>
+         <Route path='/screen' element={<Screen/>}/>
        </Routes>
      </BrowserRouter>
     </>
