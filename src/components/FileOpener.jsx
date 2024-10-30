@@ -11,8 +11,8 @@ const FileOpener = ({data}) => {
       <div className='w-[90%] bg-[#32312F] h-[80%] m-auto overflow-y-scroll text-gray-200 mt-4 px-3'>
          {data.fildData.map((showdata)=>{
            return(<>
-                <h2 className='font-bold text-4xl'>{showdata.title}</h2>
-                <p className=' text-left text-[1.1rem] leading-6 mt-6'>{showdata.discription}</p>
+                <h2 className='font-bold text-4xl mt-3'>{showdata.title}</h2>
+                <p className=' text-left text-[1.1rem] leading-6 mt-6 mb-7'>{showdata.discription}</p>
                 {showdata.Images ? "hiii" : null}
             </>)
          })}

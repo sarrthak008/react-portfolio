@@ -9,6 +9,14 @@ const FILES_DATA =[
             title:"My Story",
             discription : 'Hii 👋 , My name is sarthak Navale . I m fullStack webdeveloper from India . I enjoy learning new skills and keeping up with the latest trends in technology to deliver great projects.',
             Image:false
+           },
+           {
+            title:'My Interest',
+            discription:'I started my web development journey in 12th using just my mobile phone. I learned the basics of coding with HTML, CSS, and JavaScript. NNow, I am comfortable working with Node.js, React, and MongoDB, allowing me to build dynamic and responsive applications. I enjoy tackling new challenges and continuing to grow as a developer.',
+            Image:false
+           },
+           {
+            title:'My Projects'
            }
 
         ]
