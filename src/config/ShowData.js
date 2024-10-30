@@ -1,3 +1,5 @@
+import PORJECT1 from '../assets/project1.jpg'
+import PORJECT2 from '../assets/project2.jpg'
 
 const FILES_DATA =[
      {
@@ -12,11 +14,13 @@ const FILES_DATA =[
            },
            {
             title:'My Interest',
-            discription:'I started my web development journey in 12th using just my mobile phone. I learned the basics of coding with HTML, CSS, and JavaScript. NNow, I am comfortable working with Node.js, React, and MongoDB, allowing me to build dynamic and responsive applications. I enjoy tackling new challenges and continuing to grow as a developer.',
+            discription:'I started my web development journey in 12th using just my mobile phone. I learned the basics of coding with HTML, CSS, and JavaScript. Now, I am comfortable working with Node.js, React, and MongoDB, allowing me to build dynamic and responsive applications. I enjoy tackling new challenges and continuing to grow as a developer.',
             Image:false
            },
            {
-            title:'My Projects'
+            title:'My Projects',
+            discription:'In my journey i learn lot of things. I create lot of project there i share some between them.',
+            Image:[PORJECT1,PORJECT2]
            }
 
         ]
