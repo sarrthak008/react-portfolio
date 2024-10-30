@@ -29,5 +29,3 @@ const Footr = ({chechscrn,cur_scrn}) => {
 }
 
 export default Footr
-
-//chechscrn={setFullscrn} cur_scrn={isfullScrn}

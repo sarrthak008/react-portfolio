@@ -1,10 +1,13 @@
 import React from 'react'
-import Footr from './Footr'
+import Nav from './Nav'
 
 const FileOpener = ({data}) => {
   return (
-    <div className='h-lvh w-lvw bg-red-400 absolute top-0 left-0 z-10'>
-    
+    <div className='h-lvh w-lvw bg-[#282828] absolute top-0 left-0 z-10'>
+      <Nav/>
+      <div>
+         
+      </div>
  
     </div>
   )
