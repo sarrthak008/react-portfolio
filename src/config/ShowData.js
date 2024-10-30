@@ -9,7 +9,7 @@ const FILES_DATA =[
          name:''
      },{
         type:'folder',
-        name:'projects'
+        name:'projectsssssssss'
      }
 ]
 

@@ -4,6 +4,7 @@ import {BrowserRouter ,Routes ,Route, useNavigate} from "react-router-dom"
 import Start from './views/Start'
 import Home from './views/Home'
 import Screen from './views/Screen'
+import { MyContextProvider } from './contexts/MyContext'
 
 const App = () => {
 
@@ -27,11 +28,13 @@ const App = () => {
   return (
     <>
      <BrowserRouter>
+     <MyContextProvider>
        <Routes>
          <Route path='/' element={<Start chechscrn={setFullscrn}/>}/>
          <Route path='/home' element={<Home/>}/>
          <Route path='/screen' element={<Screen chechscrn={setFullscrn} cur_scrn={isfullScrn}/>}/>
        </Routes>
+       </MyContextProvider>
      </BrowserRouter>
     </>
   )
