@@ -12,7 +12,7 @@ const Footr = ({chechscrn,cur_scrn}) => {
     }
 
   return (
-    <div className='h-8 w-full fixed bottom-0 left-0 bg-gray-950 flex text-yellow-50 opacity-70 items-center justify-evenly'>
+    <div className='h-12 w-full fixed bottom-0 left-0 bg-gray-950 flex text-yellow-50 opacity-70 items-center justify-evenly text-[22px] sm:hidden'>
       <span className='cursor-pointer'><i className="ri-arrow-left-line"></i></span>
       <span className='cursor-pointer'><i className="ri-home-8-line"></i></span>
       <span className='cursor-pointer' onClick={chnageScrrenStatus}>{cur_scrn ? <i class="ri-collapse-diagonal-2-line"></i> : <i class="ri-expand-diagonal-fill"></i>}</span>
