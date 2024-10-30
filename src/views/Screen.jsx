@@ -2,8 +2,9 @@ import React, { useState } from 'react'
 import  {FILES_DATA} from '../config/ShowData'
 import File from '../components/File'
 import Folder from '../components/Folder'
+import Footr from '../components/Footr'
 
-const Screen = () => {
+const Screen = ({chechscrn, cur_scrn}) => {
 
   const [time, setTime] = useState('')
   const [dayInfo, setDayInfo] = useState('')
@@ -66,8 +67,10 @@ const Screen = () => {
            }</>)
          })}
       </div>
+      <Footr chechscrn={chechscrn} cur_scrn={cur_scrn}/>
     </div>
   )
 }
 
 export default Screen
+

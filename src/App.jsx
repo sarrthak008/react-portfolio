@@ -9,11 +9,15 @@ const App = () => {
 
   const [isfullScrn ,setFullscrn] = useState(false)
   const reqfullscreen = () =>{
-    document.body.requestFullscreen().then(()=>{
+     if(isfullScrn){
+      document.body.requestFullscreen().then(()=>{
         console.log('req accept')
      }).catch((e)=>{
        console.log(e)
      })
+     }else{
+      document.exitFullscreen()
+     }
   }
 
   useEffect(()=>{
@@ -26,7 +30,7 @@ const App = () => {
        <Routes>
          <Route path='/' element={<Start chechscrn={setFullscrn}/>}/>
          <Route path='/home' element={<Home/>}/>
-         <Route path='/screen' element={<Screen/>}/>
+         <Route path='/screen' element={<Screen chechscrn={setFullscrn} cur_scrn={isfullScrn}/>}/>
        </Routes>
      </BrowserRouter>
     </>
