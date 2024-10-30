@@ -13,6 +13,7 @@ const FileOpener = ({data}) => {
            return(<>
                 <h2 className='font-bold text-4xl'>{showdata.title}</h2>
                 <p className=' text-left text-[1.1rem] leading-6 mt-6'>{showdata.discription}</p>
+                {showdata.Images ? "hiii" : null}
             </>)
          })}
       </div>
