@@ -35,12 +35,12 @@ const FILES_DATA = [
          {
             type: "folder",
             name: 'code x',
-            inner_data: [{ type: "file" , title:'note' }, { type: "photo" ,title:'screenshot' }, { type: "htmlDoc", title:'website'}, { type: "gitdoc" }]
+            inner_data: [{ type: "file" , title:'note' }, { type: "photo" ,title:'screenshot' }, { type: "htmlDoc", title:'website'}, { type: "gitdoc" ,title:'github repo.'}]
          },
          {
             type: "folder",
             name: 'workZone',
-            inner_data: [{ type: "file" , title:'note'}, { type: "photo",title:'scrrenshot'  }, { type: "htmlDoc" ,title:'website' }, { type: "gitdoc" }]
+            inner_data: [{ type: "file" , title:'note'}, { type: "photo",title:'scrrenshot'  }, { type: "htmlDoc" ,title:'website' }, { type: "gitdoc" ,title:'github repo.' }]
          },
       ]
    }

@@ -3,8 +3,11 @@ import Nav from './Nav'
 import FILE from '../assets/file.png'
 import BROWSERICON from '../assets/browser.png'
 import SCREENSHOT from '../assets/screenshot.png'
+import GITHUBICON from '../assets/github.png'
 
 const FileContentOpener = ({project}) => {
+
+
   return (
     <div className='h-lvh w-lvw bg-black absolute top-0 z-40 left-0 '>
         <Nav/>
@@ -28,7 +31,12 @@ const FileContentOpener = ({project}) => {
                     <img src={SCREENSHOT} className='h-[45px] w-[45px] cursor-pointer mx-4'/>
                     <div className='text-white'>{data.title}</div>
                    </div>
-                  :null
+                  : data.type=="gitdoc" ?
+                  <div className='flex-col items-center text-center'>
+                  <img src={GITHUBICON} className='h-[45px] w-[45px] cursor-pointer mx-4'/>
+                  <div className='text-white'>{data.title}</div>
+                  </div>
+                 :null
                 }
                 </>
             )
