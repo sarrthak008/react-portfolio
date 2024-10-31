@@ -12,6 +12,10 @@ const MyContextProvider = ({ children }) => {
   const [time, setTime] = useState('')
   const [dayInfo, setDayInfo] = useState('')
 
+  //footer relateddd
+
+  const [haveFooter ,setHaveFooter] = useState(true)
+
   setInterval(() => {
 
     // get a time....
@@ -57,7 +61,9 @@ const MyContextProvider = ({ children }) => {
       time,
       dayInfo,
       isFolderOpen,
-      setFolderOpen
+      setFolderOpen,
+      haveFooter,
+      setHaveFooter
     }}>
       {children}
     </Mycontext.Provider>

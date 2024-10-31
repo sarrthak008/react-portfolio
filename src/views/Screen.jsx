@@ -8,7 +8,8 @@ import { useMyContext } from '../contexts/MyContext'
 
 const Screen = ({chechscrn, cur_scrn}) => {
 
- let {time ,dayInfo} = useMyContext()
+ let {time ,dayInfo ,haveFooter} = useMyContext()
+ 
 
   return (
     <div className='h-lvh w-lvw bg-[#282828] overflow-x-hidden'>
@@ -24,7 +25,7 @@ const Screen = ({chechscrn, cur_scrn}) => {
            }</>)
          })}
       </div>
-      <Footr chechscrn={chechscrn} cur_scrn={cur_scrn}/>
+       {haveFooter ? <Footr chechscrn={chechscrn} cur_scrn={cur_scrn}/> : null}
     </div>
   )
 }

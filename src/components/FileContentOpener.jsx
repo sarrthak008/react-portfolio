@@ -1,11 +1,22 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Nav from './Nav'
 import FILE from '../assets/file.png'
 import BROWSERICON from '../assets/browser.png'
 import SCREENSHOT from '../assets/screenshot.png'
 import GITHUBICON from '../assets/github.png'
+import OpenAnyThing from './OpenAnyThing'
+import { useMyContext } from '../contexts/MyContext'
 
 const FileContentOpener = ({project}) => {
+
+  const [opener,setOpener] = useState(false);
+  const [type,settype] =useState('')
+  const[value,setValue] = useState('')
+
+  let {setHaveFooter,haveFooter} = useMyContext()
+  useEffect(()=>{
+      setHaveFooter(true)
+    },[opener])
 
 
   return (
@@ -28,7 +39,11 @@ const FileContentOpener = ({project}) => {
                    </div>
                     : data.type === "photo" ? 
                     <div className='flex-col items-center text-center'>
-                    <img src={SCREENSHOT} className='h-[45px] w-[45px] cursor-pointer mx-4'/>
+                    <img src={SCREENSHOT} className='h-[45px] w-[45px] cursor-pointer mx-4' onClick={()=>{
+                      settype('image');
+                      setValue(data.url)
+                      setOpener(true)
+                    }}/>
                     <div className='text-white'>{data.title}</div>
                    </div>
                   : data.type=="gitdoc" ?
@@ -42,6 +57,7 @@ const FileContentOpener = ({project}) => {
             )
         })}
        </div>
+       {opener ? <OpenAnyThing type={type} value={value} close={setOpener}/> :null }
     </div>
   )
 }
