@@ -4,7 +4,7 @@ import { useMyContext } from '../contexts/MyContext';
 
 const Footr = ({chechscrn,cur_scrn}) => {
 
-  let {setFileOpen} = useMyContext()
+  let {setFileOpen,setFolderOpen} = useMyContext()
 
     const chnageScrrenStatus =() =>{
          if(cur_scrn){
@@ -16,6 +16,7 @@ const Footr = ({chechscrn,cur_scrn}) => {
 
     const getoback = () =>{
       setFileOpen(false)
+      setFolderOpen(false)
     }
 
 

@@ -20,8 +20,8 @@ const FileOpener = ({data}) => {
          {data.fildData.map((showdata ,index)=>{
            return(<>
               <div key={index}>
-                <h2 className='font-bold text-4xl mt-3' key={index}>{showdata.title}</h2>
-                <p className=' text-left text-[1.1rem] leading-6 mt-6 mb-7'>{showdata.discription}</p>
+                <h2 className='font-bold text-4xl mt-3 sm:text-2xl' key={index} >{showdata.title}</h2>
+                <p className=' text-left text-[1.1rem] leading-6 mt-6 mb-7 sm:text-[1em]'>{showdata.discription}</p>
                  <div>
                   {showdata.Image == false ? null : <>
                     {

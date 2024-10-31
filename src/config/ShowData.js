@@ -30,7 +30,19 @@ const FILES_DATA =[
          name:''
      },{
         type:'folder',
-        name:'projects'
+        name:'projects',
+        content:[
+           {
+            type:"folder",
+            name:'code x',
+            inner_data:["file","photo","htmldoc","github"]
+           },
+           {
+            type:"folder",
+            name:'workZone',
+            inner_data:["file","photo","htmldoc","github"]
+           },
+        ]
      }
 ]
 
