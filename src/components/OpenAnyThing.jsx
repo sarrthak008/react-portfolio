@@ -14,9 +14,20 @@ const OpenAnyThing = ({type,value,close}) => {
 
  //open the image..
   const IMGOPENER = ({path}) =>{
+    
+
+    const [loder,setloader] =useState(true)
+    setTimeout(()=>{
+      setloader(false)
+    },2000)
+
      return(
         <div className='w-full h-full flex items-center justify-center'>
-                 <img src={path}/>
+            {loder ?  
+             <div className='h-2/6 w-full absolute bg-gray-400 animate-pulse flex items-center justify-center'>
+              </div> : 
+              <img src={path} alt="" />
+            }
         </div>
      )
   }
@@ -39,7 +50,7 @@ const OpenAnyThing = ({type,value,close}) => {
       return(
         <>
          <div className='text-white text-sm absolute top-11 left-10 text-yellow-50 opacity-70 px-5 py-1 bg-gray-800 rounded-3xl text-left' >{url}</div>
-        <div className='h-full w-full bg-white mt-[30%]'>
+        <div className='h-full w-full bg-white mt-[27%]'>
             {loder ?  
              <div className='h-full w-full absolute bg-gray-400 animate-pulse flex items-center justify-center'>
                  <span className='animate-ping block w-[40px] h-[40px] bg-yellow-300 rounded-full'></span>
