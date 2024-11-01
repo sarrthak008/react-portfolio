@@ -14,6 +14,7 @@ const FileContentOpener = ({ project }) => {
   const [value, setValue] = useState('')
 
   let { setHaveFooter, haveFooter } = useMyContext()
+  const {setFileContentOpen} = useMyContext()
   useEffect(() => {
     setHaveFooter(true)
   }, [opener])
@@ -22,7 +23,7 @@ const FileContentOpener = ({ project }) => {
   return (
     <div className='h-lvh w-lvw bg-black absolute top-0 z-40 left-0 '>
       <Nav />
-      <div className='text-yellow-50 opacity-70 text-[11px]  w-full mt-9 text-sm'>{project.name}/</div>
+      <div className='text-yellow-50 opacity-70 text-[11px]  w-full mt-9 text-sm'> <i className="ri-folder-received-fill ml-5 mr-2 cursor-pointer" onClick={()=>{setFileContentOpen(false)}}></i> / {project.name}</div>
       <div className='flex mt-9 gap-4 w-full flex-wrap'>
         {project.inner_data.map((data) => {
           return (

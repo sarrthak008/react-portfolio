@@ -2,10 +2,11 @@ import React, { useState } from 'react'
 import Nav from './Nav'
 import FOLDERICON from '../assets/folder.png'
 import FileContentOpener from './FileContentOpener'
+import { useMyContext } from '../contexts/MyContext'
 
 const FolderOpener = ({ data }) => {
 
-  const [fileContentOpen,setFileContentOpen] = useState(false);
+  const {fileContentOpen,setFileContentOpen} = useMyContext();
   const [openProject,setOpenProject] =useState('')
   
 

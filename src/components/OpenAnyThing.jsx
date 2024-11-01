@@ -19,14 +19,14 @@ const OpenAnyThing = ({type,value,close}) => {
     const [loder,setloader] =useState(true)
     setTimeout(()=>{
       setloader(false)
-    },2000)
+    },1500)
 
      return(
         <div className='w-full h-full flex items-center justify-center'>
             {loder ?  
-             <div className='h-2/6 w-full absolute bg-gray-400 animate-pulse flex items-center justify-center'>
+             <div className='h-2/6 w-full absolute bg-gray-400 animate-pulse flex items-center justify-center sm:h-3/4 sm:w-3/4'>
               </div> : 
-              <img src={path} alt="" />
+              <img src={path} alt="image about project..." className='sm:h-3/4' />
             }
         </div>
      )
@@ -46,17 +46,21 @@ const OpenAnyThing = ({type,value,close}) => {
       const [loder,setloader] =useState(true)
       setTimeout(()=>{
         setloader(false)
-      },3000)
+      },2500)
+
       return(
         <>
-         <div className='text-white text-sm absolute top-11 left-10 text-yellow-50 opacity-70 px-5 py-1 bg-gray-800 rounded-3xl text-left' >{url}</div>
-        <div className='h-full w-full bg-white mt-[27%]'>
+        <div className='absolute top-11 left-10 flex'>
+         <div className='text-white  text-yellow-50 opacity-70 px-5 py-1 bg-gray-800 rounded-3xl text-left text-sm line-clamp-1 sm:w-full' >{url}</div>
+         <span className='text-white'><i className="ri-arrow-right-up-line"></i></span>
+        </div>
+         <div className='h-full w-full bg-white mt-[30%] sm:mt-[8%] overflow-hidden  flex items-center justify-center'>
             {loder ?  
              <div className='h-full w-full absolute bg-gray-400 animate-pulse flex items-center justify-center'>
               </div> : 
-            <iframe src={url} className='h-full w-full'></iframe>
+            <iframe src={url} className='h-full w-full '></iframe>
             }
-        </div>
+         </div>
         </>
       )
   }

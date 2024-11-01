@@ -16,6 +16,10 @@ const MyContextProvider = ({ children }) => {
 
   const [haveFooter ,setHaveFooter] = useState(true)
 
+  //openn folder contentsss
+
+  const [fileContentOpen,setFileContentOpen] = useState(false);
+
   setInterval(() => {
 
     // get a time....
@@ -63,7 +67,9 @@ const MyContextProvider = ({ children }) => {
       isFolderOpen,
       setFolderOpen,
       haveFooter,
-      setHaveFooter
+      setHaveFooter,
+      fileContentOpen,
+      setFileContentOpen
     }}>
       {children}
     </Mycontext.Provider>

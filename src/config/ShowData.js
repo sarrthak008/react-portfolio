@@ -34,19 +34,23 @@ const FILES_DATA = [
       content: [
          {
             type: "folder",
-            name: 'code x',
+            name: 'Durvas Travels',
             inner_data: [
                { type: "file", title: 'note' },
-               { type: "photo", title: 'screenshot', url: PORJECT1 },
-               { type: "htmlDoc", title: 'website', url: 'https://codee-x.netlify.app/' }, 
-               { type: "gitdoc", title: 'github repo.' }]
+               { type: "photo", title: 'screenshot', url: PORJECT2 },
+               { type: "htmlDoc", title: 'website', url: 'https://durvas-world-travels.netlify.app/' }, 
+               { type: "gitdoc", title: 'github repo.' },
+               {
+                  
+               }
+            ]
          },
          {
             type: "folder",
             name: 'workZone',
             inner_data: [
                { type: "file", title: 'note' }, 
-               { type: "photo", title: 'scrrenshot', url: PORJECT2 }, 
+               { type: "photo", title: 'scrrenshot', url: PORJECT1 }, 
                { type: "htmlDoc", title: 'website', url: 'https://work-zzone.netlify.app' }, 
                { type: "gitdoc", title: 'github repo.' }]
          },
