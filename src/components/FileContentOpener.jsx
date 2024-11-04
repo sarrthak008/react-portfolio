@@ -30,7 +30,11 @@ const FileContentOpener = ({ project }) => {
             <>
               {data.type == "file" ?
                 <div className='flex-col items-center text-center'>
-                  <img src={FILE} className='h-[45px] w-[45px] cursor-pointer mx-2'></img>
+                  <img src={FILE} className='h-[45px] w-[45px] cursor-pointer mx-2' onClick={()=>{
+                    settype('file');
+                    setValue(data);
+                    setOpener(true) 
+                  }}></img>
                   <div className='text-white'>{data.title}</div>
                 </div> :
                 data.type == "htmlDoc" ?
