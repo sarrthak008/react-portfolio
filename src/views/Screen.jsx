@@ -19,11 +19,10 @@ const Screen = ({chechscrn, cur_scrn}) => {
         <div className='text-yellow-100 text-md opacity-80'>{dayInfo}</div>
       </div>
       <div className='w-[85%] h-60 mx-[7.5%] flex flex-wrap'>
-         { FILES_DATA.map((fileInfo)=>{
-           return(<>{
-              fileInfo.type === "file" ? <File fileInfo={fileInfo}/> : fileInfo.type === "folder" ? <Folder fileInfo={fileInfo}/> : null
-           }</>)
-         })}
+         { FILES_DATA.map((fileInfo ,index)=>(
+          
+              fileInfo.type === "file" ? <File fileInfo={fileInfo} key={index} id={index}/> : fileInfo.type === "folder" ? <Folder fileInfo={fileInfo} key={index}/> : null
+         ))}
       </div>
        {haveFooter ? <Footr chechscrn={chechscrn} cur_scrn={cur_scrn}/> : null}
     </div>

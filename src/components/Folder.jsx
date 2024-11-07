@@ -7,7 +7,6 @@ const Folder = ({fileInfo}) => {
 
    let {isFolderOpen,setFolderOpen} = useMyContext()
    
-
   return (
     <div>
     <div className='h-[30px] w-[40px] cursor-pointer mx-2'>

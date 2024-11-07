@@ -20,6 +20,9 @@ const MyContextProvider = ({ children }) => {
 
   const [fileContentOpen,setFileContentOpen] = useState(false);
 
+  //open indexx
+   const [index,setindex] = useState(-1);
+
   setInterval(() => {
 
     // get a time....
@@ -69,7 +72,9 @@ const MyContextProvider = ({ children }) => {
       haveFooter,
       setHaveFooter,
       fileContentOpen,
-      setFileContentOpen
+      setFileContentOpen,
+      index,
+      setindex
     }}>
       {children}
     </Mycontext.Provider>
