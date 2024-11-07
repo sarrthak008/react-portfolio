@@ -26,10 +26,6 @@ const FILES_DATA = [
       ]
    },
    {
-      type: 'contact',
-      name: ''
-   }, 
-   {
       type: 'folder',
       name: 'projects',
       content: [
@@ -68,7 +64,11 @@ const FILES_DATA = [
             ]
          },
       ]
-   }
+   },
+   {
+      type: 'contact',
+      name: 'contact'
+   }, 
 
 ]
 export { FILES_DATA }

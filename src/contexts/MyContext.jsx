@@ -20,8 +20,8 @@ const MyContextProvider = ({ children }) => {
 
   const [fileContentOpen,setFileContentOpen] = useState(false);
 
-  //open indexx
-   const [index,setindex] = useState(-1);
+  // contact opener setter method
+  const [contactopen,setContactOpen] = useState(false)
 
   setInterval(() => {
 
@@ -73,8 +73,8 @@ const MyContextProvider = ({ children }) => {
       setHaveFooter,
       fileContentOpen,
       setFileContentOpen,
-      index,
-      setindex
+      contactopen,
+      setContactOpen
     }}>
       {children}
     </Mycontext.Provider>

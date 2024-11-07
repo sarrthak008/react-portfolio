@@ -82,9 +82,9 @@ const OpenAnyThing = ({ type, value, close }) => {
             {type == 'image' ?
                <IMGOPENER path={value} />
                : type == "web" ?
-                  <WEBOPENER url={value} /> 
-               :type === 'file' ?
-                  <FILEOPENER data={value} /> : null
+                  <WEBOPENER url={value} />
+                  : type === 'file' ?
+                     <FILEOPENER data={value} /> : null
             }
          </div>
       </div>
