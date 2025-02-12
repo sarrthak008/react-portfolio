@@ -9,20 +9,18 @@ const FILES_DATA = [
 
          {
             title: "My Story",
-            discription: 'Hii 👋 , My name is sarthak Navale . I m fullStack webdeveloper from India . I enjoy learning new skills and keeping up with the latest trends in technology to deliver great projects.',
+            discription: 'Hii 👋 , My name is sarthak Navale . I m fullStack webdeveloper from India . I enjoy learning new skills and keeping up with the latest trends in technology to deliver great projects.I am currently starting the project called as "easycode" there we teach the fullStack in affordable prise.',
             Image: false
          },
          {
             title: 'My Interest',
-            discription: 'I started my web development journey in 12th using just my mobile phone. I learned the basics of coding with HTML, CSS, and JavaScript. Now, I am comfortable working with Node.js, React, and MongoDB, allowing me to build dynamic and responsive applications. I enjoy tackling new challenges and continuing to grow as a developer.',
+            discription: 'I started my web development journey in 12th using just my mobile phone. I learned the basics of coding with HTML, CSS, and JavaScript. Now, I am comfortable working with Node.js, React, tailwind, and MongoDB, allowing me to build dynamic and responsive applications. I enjoy tackling new challenges and continuing to grow as a developer.',
             Image: false
-         },
-         {
-            title: 'My Projects',
-            discription: 'In my journey i learn lot of things. I create lot of project there i share some between them.',
-            Image: [PORJECT1, PORJECT2]
+         },{
+            title: 'what is easycode ?',
+            discription: 'I started my web development journey in 12th using just my mobile phone. I learned the basics of coding with HTML, CSS, and JavaScript. Now, I am comfortable working with Node.js, React, tailwind, and MongoDB, allowing me to build dynamic and responsive applications. I enjoy tackling new challenges and continuing to grow as a developer.',
+            Image: false
          }
-
       ]
    },
    {

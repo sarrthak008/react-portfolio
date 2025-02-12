@@ -11,7 +11,7 @@ const Start = ({chechscrn}) => {
    <span onClick={getFullScreen}>
          <i class="ri-shut-down-line text-5xl font-medium cursor-pointer hover:text-white transition-colors"></i>
      </span>
-</Link>
+  </Link>
     </div>
   )
 }

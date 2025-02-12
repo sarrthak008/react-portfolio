@@ -1,21 +1,32 @@
-import React, { useEffect } from 'react'
-import PROFILEIMG from '../assets/profile.svg'
-import { Link } from 'react-router-dom'
+import React from 'react'
+import Nav from '../components/Nav'
+import { useMyContext } from '../contexts/MyContext'
+import { FILES_DATA } from '../config/ShowData'
+import FileIcon from '../components/FileIcon'
+import FolderIcon from '../components/FolderIcon'
 
-const home = () => {
-
+const Home = () => {
+  let {time ,dayInfo} = useMyContext()
   return (
-    <div className='h-lvh w-lvw bg-[#282828] flex items-center justify-center text-center'>
-        <div className='flex flex-col items-center justify-center gap-2'>
-            <div className='h-[90px] w-[90px] rounded-full bg-[#FFC200] flex items-center justify-center mb-3'>
-              <img src={PROFILEIMG} className='mt-4'/>
-            </div>
-            <h2 className='text-2xl font-bold text-yellow-100 line-clamp-0  sm:text-3xl '>Sarthak Navale</h2>
-            <h4 className='text-sm text-yellow-50 opacity-40'>Fullstack web Developer</h4>
-         <Link to='/screen'><button className='orange px-5 py-1 rounded-sm border-0 mt-10 hover:bg-yellow-600'><i className="ri-arrow-right-line"></i> Login</button></Link>  
+    <div className='h-screen w-screen bg-gray-950 text-gray-500 overflow-hidden '>
+     <Nav/>
+    <div>
+       <div className='h-40 w-full flex items-center  flex-col justify-center '>
+           <div className='text-6xl font-bold text-gray-400'>{time}</div>
+           <div className='text-xl font-medium text-gray-500 opacity-55'>{dayInfo}</div>
+       </div>
+        <div className='min-h-44 w-full flex flex-wrap gap-4 ml-0 sm:ml-20'>
+         {
+           FILES_DATA?.map((dataInfo,index)=>(
+             <>
+               {dataInfo?.type === "file" ? <FileIcon info={dataInfo}/>: dataInfo?.type ==="folder" ? <FolderIcon info={dataInfo}/> :null  }
+             </>
+           ))
+          }
         </div>
+    </div>
     </div>
   )
 }
 
-export default home
+export default Home

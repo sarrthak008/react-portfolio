@@ -11,3 +11,7 @@ body{
 body::-webkit-scrollbar{
  display: none;
 }
+
+.hinde-scrollbar::-webkit-scrollbar{
+  display: none;
+}
