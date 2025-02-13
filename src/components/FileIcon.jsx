@@ -6,6 +6,8 @@ import gsap from 'gsap/all'
 const FileOpener = ({isFileOpen,setIsFileOpen,info}) =>{
   
 
+const [fullScrn, setfullScrn] = useState(false)
+
 useGSAP(() => {
       gsap.from(".file-opener", {
         opacity: 0,
@@ -19,14 +21,12 @@ useGSAP(() => {
         ease: "power3.out",
       });
 
-  }, []); 
+  },); 
 
 const  closeOpener = ()=>{
     let t1 = gsap.timeline()
     t1.to(".file-opener",{
       optcity:0,
-      height:50,
-      width:50,
       duration:0.5,
       scale: 0.2,
       rotate: -10,
@@ -42,23 +42,28 @@ const handelClose =()=>{
      useGSAP(closeOpener())
   }
 
+  const SCRNS ={
+     fullScreen : `h-screen w-screen rounded-none`,
+     smallScreen: `w-[80%] h-[80%] rounded-sm`
+  }
 
-
-  
 
    return(
-     <div  className='w-[80%] h-[80%]  absolute  mx-auto left-[50%] top-[50%] -translate-x-[50%] -translate-y-[50%] backdrop-blur-md bg-[#323232] file-opener resize shadow-sm shadow-gray-800 rounded-md'>
-      <div className='w-full h-10 flex gap-1 m-2'>
-         <div className='h-[15px] w-[15px] rounded-full bg-red-500 cursor-pointer' onClick={(e)=>{ e.stopPropagation();handelClose()}}></div>
-         <div className='h-[15px] w-[15px] rounded-full bg-yellow-500 cursor-pointer'></div>
-         <div className='h-[15px] w-[15px] rounded-full bg-green-500 cursor-pointer'></div>
-      </div>
+     <div  className={`${fullScrn ? SCRNS.fullScreen : SCRNS.smallScreen} absolute  mx-auto left-[50%] top-[50%] -translate-x-[50%] -translate-y-[50%] backdrop-blur-md bg-[#323232] file-opener resize shadow-sm shadow-gray-800 rounded-md resize`} >
+      <div className='flex'>
+          <div className=' h-10 flex gap-1 m-2'>
+            <div className='h-[15px] w-[15px] rounded-full bg-red-500 cursor-pointer' onClick={(e) => { e.stopPropagation(); handelClose() }}></div>
+            <div className='h-[15px] w-[15px] rounded-full bg-yellow-500 cursor-pointer' onClick={()=>setfullScrn((prev)=>!prev)}></div>
+            <div className='h-[15px] w-[15px] rounded-full bg-green-500 cursor-pointer'></div>
+          </div>
+         <div className='min-w-[90%] text-center font-normal text-xl lowercase'>{info?.name} <i className="ri-search-2-line text-md"></i></div>
+        </div>
       <div className='overflow-x-hidden overflow-y-scroll hinde-scrollbar h-[85%]'>
          {
           info?.fildData?.map((data,index)=>(
             <div className='ml-5 p-3'>
-              <span className='text-white text-3xl font-medium block my-6'>{data?.title}</span>
-              <p className='text-xl text-gray-400'>{data?.discription}</p>
+              <span className='text-white text-2xl font-medium block my-6'>{data?.title}</span>
+              <p className='text-md text-gray-400'>{data?.discription}</p>
             </div>
           ))
          }
