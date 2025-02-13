@@ -9,30 +9,28 @@ const SubfolderOpener =({setIsFolderOpen,folderInfo})=>{
     useGSAP(() => {
         gsap.from(".folder-opener", {
           opacity: 0,
-          duration: 0.001,
+          duration: 0.0004,
           width: 0,
           height: 0,
           scale: 0.5,
           rotate: -10,
           top: '10%',
           left: "50%",
-          ease:'elastic.out',
         });
     
       }, []);
     
-      const closeOpener = () => {
+    const closeOpener = () => {
         let t1 = gsap.timeline()
         t1.to(".folder-opener", {
           optcity: 0,
           height: 50,
           width: 50,
-          duration: 0.001,
+          duration: 0.01,
           scale: 0.3,
           rotate: -10,
-          delay: 0.1,
+          delay: 0.001,
           top: '100%',
-          ease: "power3.out",
           left: '50%',
           onComplete: () => { setIsFolderOpen(false) }
         })
