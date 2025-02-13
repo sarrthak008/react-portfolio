@@ -47,7 +47,7 @@ const FolderOpner = ({ isFolderOpen, setIsFolderOpen, info }) => {
 
   return (
     <>
-      <div className='w-[80%] h-[80%] folder-opener  absolute  mx-auto left-[50%] top-[50%] -translate-x-[50%] -translate-y-[50%] backdrop-blur-md bg-[#2a2a2a] file-opener resize shadow-sm shadow-gray-300 rounded-md  border-[0.5px] border-gray-900 z-10'>
+      <div className='w-[90vw] h-[90vh] folder-opener  absolute  mx-auto left-[50%] top-[50%] -translate-x-[50%] -translate-y-[50%] backdrop-blur-md bg-[#2a2a2a] file-opener resize shadow-sm shadow-gray-300 rounded-md  border-[0.5px] border-gray-900 z-10'>
         <div className='flex'>
           <div className=' h-10 flex gap-1 m-2'>
             <div className='h-[15px] w-[15px] rounded-full bg-red-500 cursor-pointer' onClick={(e) => { e.stopPropagation(); handelClose() }}></div>

@@ -3,19 +3,20 @@ import FOLDER_ICO from "../assets/folder.png"
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap/all'
 import FileIcon from './FileIcon'
+import Browser from './Browser'
 
 const SubfolderOpener =({setIsFolderOpen,folderInfo})=>{
     useGSAP(() => {
         gsap.from(".folder-opener", {
           opacity: 0,
-          duration: 0.5,
+          duration: 0.001,
           width: 0,
           height: 0,
           scale: 0.5,
           rotate: -10,
           top: '10%',
           left: "50%",
-          ease: "power3.out",
+          ease:'elastic.out',
         });
     
       }, []);
@@ -26,10 +27,10 @@ const SubfolderOpener =({setIsFolderOpen,folderInfo})=>{
           optcity: 0,
           height: 50,
           width: 50,
-          duration: 0.5,
-          scale: 0.2,
+          duration: 0.001,
+          scale: 0.3,
           rotate: -10,
-          delay: 0.2,
+          delay: 0.1,
           top: '100%',
           ease: "power3.out",
           left: '50%',
@@ -57,7 +58,11 @@ const SubfolderOpener =({setIsFolderOpen,folderInfo})=>{
                 folderInfo?.inner_data?.map((data,inde)=>(
                 
                      <>
-                       {data?.type=='file' ? <FileIcon info={data}/> : null}
+                       {data?.type=='file' ? <FileIcon info={data}/> : 
+                        
+                        data?.type == "htmlDoc" ? <Browser info={data}/> :null
+
+                       }
                      </>
                 ))
     

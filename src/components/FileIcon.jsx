@@ -26,14 +26,16 @@ useGSAP(() => {
 const  closeOpener = ()=>{
     let t1 = gsap.timeline()
     t1.to(".file-opener",{
-      optcity:0,
-      duration:0.5,
+      optcity: 0,
+      height: 50,
+      width: 50,
+      duration: 0.5,
       scale: 0.2,
       rotate: -10,
-      delay:0.2,
-      top:'100%',
+      delay: 0.2,
+      top: '100%',
       ease: "power3.out",
-      left:'50%',
+      left: '50%',
       onComplete:()=>{setIsFileOpen(false)}
     })
   }
@@ -44,12 +46,12 @@ const handelClose =()=>{
 
   const SCRNS ={
      fullScreen : `h-screen w-screen rounded-none`,
-     smallScreen: `w-[80%] h-[80%] rounded-sm`
+     smallScreen: `w-[90vw] h-[90vh] rounded-sm`
   }
 
 
    return(
-     <div  className={`${fullScrn ? SCRNS.fullScreen : SCRNS.smallScreen} absolute  mx-auto left-[50%] top-[50%] -translate-x-[50%] -translate-y-[50%] backdrop-blur-md bg-[#323232] file-opener resize shadow-sm shadow-gray-800 rounded-md resize`} >
+     <div  className={`${fullScrn ? SCRNS.fullScreen : SCRNS.smallScreen} absolute  mx-auto left-[50%] top-[50%] -translate-x-[50%] -translate-y-[50%] backdrop-blur-md bg-[#323232] file-opener shadow-sm shadow-gray-800 rounded-md resize`} >
       <div className='flex'>
           <div className=' h-10 flex gap-1 m-2'>
             <div className='h-[15px] w-[15px] rounded-full bg-red-500 cursor-pointer' onClick={(e) => { e.stopPropagation(); handelClose() }}></div>
@@ -82,7 +84,7 @@ const FileIcon = ({info}) => {
         <div className='h-[35px] '>
            <img src={FILE_ICO} className='h-full  object-fill'/>
         </div>
-       <div className='lowercase text-sm text-white'>{info?.name}</div>
+       <div className='lowercase text-sm text-white'>{info?.name ? info?.name : "about project" }</div>
     </div>
       {isFileOpen ? <FileOpener isFileOpen={isFileOpen}  setIsFileOpen={setIsFileOpen} info={info}/> : null}
     </>
