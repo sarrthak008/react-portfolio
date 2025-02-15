@@ -2,11 +2,13 @@ import React, { useEffect, useState ,useRef } from 'react'
 import FILE_ICO from '../assets/file.png'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap/all'
+import { useMyContext } from '../contexts/MyContext'
 
 const FileOpener = ({isFileOpen,setIsFileOpen,info}) =>{
   
 
 const [fullScrn, setfullScrn] = useState(false)
+const {addTolocalStorgae} = useMyContext()
 
 useGSAP(() => {
       gsap.from(".file-opener", {
@@ -49,6 +51,13 @@ const handelClose =()=>{
      smallScreen: `w-[90vw] h-[90vh] rounded-sm`
   }
 
+  const addToHistory =()=>{
+    addTolocalStorgae(info)
+    handelClose()
+  }
+
+
+
 
    return(
      <div  className={`${fullScrn ? SCRNS.fullScreen : SCRNS.smallScreen} absolute  mx-auto left-[50%] top-[50%] -translate-x-[50%] -translate-y-[50%] backdrop-blur-md bg-[#323232] file-opener shadow-sm shadow-gray-800 rounded-md resize`} >
@@ -56,7 +65,7 @@ const handelClose =()=>{
           <div className=' h-10 flex gap-1 m-2'>
             <div className='h-[15px] w-[15px] rounded-full bg-red-500 cursor-pointer' onClick={(e) => { e.stopPropagation(); handelClose() }}></div>
             <div className='h-[15px] w-[15px] rounded-full bg-yellow-500 cursor-pointer' onClick={()=>setfullScrn((prev)=>!prev)}></div>
-            <div className='h-[15px] w-[15px] rounded-full bg-green-500 cursor-pointer'></div>
+            <div className='h-[15px] w-[15px] rounded-full bg-green-500 cursor-pointer' onClick={()=>{addToHistory()}}></div>
           </div>
          <div className='min-w-[90%] text-center font-normal text-xl lowercase'>{info?.name} <i className="ri-search-2-line text-md"></i></div>
         </div>

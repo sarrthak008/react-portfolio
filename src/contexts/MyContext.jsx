@@ -11,17 +11,8 @@ const MyContextProvider = ({ children }) => {
 
   const [time, setTime] = useState('')
   const [dayInfo, setDayInfo] = useState('')
+  const [allTabs,setAllTabs] = useState([])
 
-  //footer relateddd
-
-  const [haveFooter ,setHaveFooter] = useState(true)
-
-  //openn folder contentsss
-
-  const [fileContentOpen,setFileContentOpen] = useState(false);
-
-  // contact opener setter method
-  const [contactopen,setContactOpen] = useState(false)
 
   setInterval(() => {
 
@@ -59,22 +50,24 @@ const MyContextProvider = ({ children }) => {
     setDayInfo(`${monthNames[month]} ${day} , ${year}`)
 
   }, 1000)
+  
+  const addTolocalStorgae = (iteam) =>{
+    let tabs = JSON.parse(localStorage.getItem('tabs')) || []
+    tabs.push(iteam);
+    setAllTabs(tabs)
+    localStorage.setItem('tabs',JSON.stringify(tabs))
+  }
 
+
+
+  
 
   return (
     <Mycontext.Provider value={{
-      isfileOpen,
-      setFileOpen,
       time,
       dayInfo,
-      isFolderOpen,
-      setFolderOpen,
-      haveFooter,
-      setHaveFooter,
-      fileContentOpen,
-      setFileContentOpen,
-      contactopen,
-      setContactOpen
+      addTolocalStorgae,
+      allTabs
     }}>
       {children}
     </Mycontext.Provider>

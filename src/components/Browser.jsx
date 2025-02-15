@@ -66,7 +66,7 @@ const LinksOpener = ({url,setBrowser}) => {
 const Browser = ({ info }) => {
 
     const [Browser, setBrowser] = useState(false)
-    console.log(info)
+    
     return (
         <>
             <div className='h-[45px] flex flex-col items-center cursor-pointer m-2' onClick={() => { setBrowser(true) }}>

@@ -3,11 +3,12 @@ import FOLDER_ICO from "../assets/folder.png"
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap/all'
 import Subfolder from './Subfolder'
+import { useMyContext } from '../contexts/MyContext'
 
 
 const FolderOpner = ({ isFolderOpen, setIsFolderOpen, info }) => {
 
-  console.log(info)
+  const {addTolocalStorgae} = useMyContext()
 
   useGSAP(() => {
     gsap.from(".folder-opener", {
@@ -45,14 +46,22 @@ const FolderOpner = ({ isFolderOpen, setIsFolderOpen, info }) => {
     useGSAP(closeOpener())
   }
 
+
+  const addToHistory =()=>{
+    addTolocalStorgae(info)
+    handelClose()
+  }
+
+
   return (
     <>
-      <div className='w-[90vw] h-[90vh] folder-opener  absolute  mx-auto left-[50%] top-[50%] -translate-x-[50%] -translate-y-[50%] backdrop-blur-md bg-[#2a2a2a] file-opener resize shadow-sm shadow-gray-300 rounded-md  border-[0.5px] border-gray-900 z-10'>
+      <div className='h-screen w-screen absolute top-0 left-0 flex items-center justify-center '>
+      <div className='w-[90vw] h-[90vh] folder-opener  backdrop-blur-md bg-[#2a2a2a] file-opener resize shadow-sm shadow-gray-300 rounded-md  border-[0.5px] border-gray-900 z-10'>
         <div className='flex'>
           <div className=' h-10 flex gap-1 m-2'>
             <div className='h-[15px] w-[15px] rounded-full bg-red-500 cursor-pointer' onClick={(e) => { e.stopPropagation(); handelClose() }}></div>
             <div className='h-[15px] w-[15px] rounded-full bg-yellow-500 cursor-pointer'></div>
-            <div className='h-[15px] w-[15px] rounded-full bg-green-500 cursor-pointer'></div>
+            <div className='h-[15px] w-[15px] rounded-full bg-green-500 cursor-pointer' onClick={()=>{addToHistory()}}></div>
           </div>
          <div className='min-w-[90%] text-center font-normal text-xl'>{info?.name} <i className="ri-search-2-line text-md"></i></div>
         </div>
@@ -66,6 +75,7 @@ const FolderOpner = ({ isFolderOpen, setIsFolderOpen, info }) => {
 
           }
         </div>
+      </div>
       </div>
     </>
   )
